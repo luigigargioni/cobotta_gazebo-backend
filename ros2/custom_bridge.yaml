@@ -1,0 +1,65 @@
+- ros_topic_name: "/joint1W"
+  gz_topic_name: "/model/Cobotta/joint/joint1/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+- ros_topic_name: "/joint1R"
+  gz_topic_name: "/model/Cobotta/joint/joint1/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/joint2W"
+  gz_topic_name: "/model/Cobotta/joint/joint2/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+- ros_topic_name: "/joint2R"
+  gz_topic_name: "/model/Cobotta/joint/joint2/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/joint3W"
+  gz_topic_name: "/model/Cobotta/joint/joint3/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+- ros_topic_name: "/joint3R"
+  gz_topic_name: "/model/Cobotta/joint/joint3/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/joint4W"
+  gz_topic_name: "/model/Cobotta/joint/joint4/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+- ros_topic_name: "/joint4R"
+  gz_topic_name: "/model/Cobotta/joint/joint4/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/joint5W"
+  gz_topic_name: "/model/Cobotta/joint/joint5/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+- ros_topic_name: "/joint5R"
+  gz_topic_name: "/model/Cobotta/joint/joint5/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: GZ_TO_ROS
+
+- ros_topic_name: "/joint6W"
+  gz_topic_name: "/model/Cobotta/joint/joint6/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: ROS_TO_GZ
+- ros_topic_name: "/joint6R"
+  gz_topic_name: "/model/Cobotta/joint/joint6/0/cmd_pos"
+  ros_type_name: "std_msgs/msg/Float64"
+  gz_type_name: "gz.msgs.Double"
+  direction: GZ_TO_ROS
