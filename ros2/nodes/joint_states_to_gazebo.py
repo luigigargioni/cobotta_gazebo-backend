@@ -9,6 +9,7 @@ class JointStateSubscriber(Node):
 
     def __init__(self):
         super().__init__('joint_state_subscriber')
+
         self.subscription = self.create_subscription(
             JointState,
             'joint_statesW',
@@ -30,14 +31,15 @@ class JointStateSubscriber(Node):
                 float_msg = Float64()
                 #conversion from degree to radiant
                 float_msg.data = round(math.radians(position), 2)
-                # print(name, " -> ", float_msg.data)
 
                 self.joint_publishers[name].publish(float_msg)
                 # self.get_logger().info('Published {}: "{}"'.format(name, float_msg.data))
 
 def main(args=None):
     rclpy.init(args=args)
+
     node = JointStateSubscriber()
+    
     rclpy.spin(node)
     node.destroy_node()
     rclpy.shutdown()

@@ -10,6 +10,7 @@ class CobottaController(Node):
 
     def __init__(self, client, hRobot):
         super().__init__('cobotta_controller')
+
         self.subscription = self.create_subscription(
             JointState,
             'joint_states',
@@ -18,7 +19,6 @@ class CobottaController(Node):
     
         self.client = client
         self.hRobot = hRobot
-
 
         # if active then jointState is send to Cobotta
         self.active = False
@@ -34,9 +34,6 @@ class CobottaController(Node):
         
     def listener_callback(self, msg):
         if self.active:
-            # self.get_logger().info('Received joint states: {}'.format(msg.position))
-            # Here you can add the code to move the physical robot using msg.position
-
             self.move_robot(msg.position)
 
     def move_robot(self, positions):       
@@ -54,7 +51,7 @@ def main(args=None):
 
     # connect to Cobotta
     client, _, hRobot = connect("192.168.0.1", 5007, 5000)
-    #move_to_calibration_position(client, hRobot)
+
     physical_robot_controller = CobottaController(client, hRobot)
 
     rclpy.spin(physical_robot_controller)

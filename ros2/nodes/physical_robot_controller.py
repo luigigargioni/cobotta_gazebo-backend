@@ -47,9 +47,6 @@ def main(args=None):
 
     # connect to Cobotta
     client, _, hRobot = connect("192.168.0.1", 5007, 5000)
-    # printf("physical robot controller connected to Cobotta.")
-    # # move robot to calibration position
-    # move_to_calibration_position(client, hRobot)
 
     physical_robot_controller = PhysicalRobotController(client, hRobot)
 
