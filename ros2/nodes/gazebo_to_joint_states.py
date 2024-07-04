@@ -11,13 +11,22 @@ class JointStatePublisher(Node):
         self.publisher = self.create_publisher(JointState, 'joint_states', 10)
 
         self.joint_names = ['joint1R', 'joint2R', 'joint3R', 'joint4R', 'joint5R', 'joint6R']
+        self.joint_names_write = ['joint1W', 'joint2W', 'joint3W', 'joint4W', 'joint5W', 'joint6W']
 
-        self.positions = [0.0, 0.0, 0.32, 0.0, 0.0, 0.0]
+        self.positions = [0.0, 0.0, 0.32, 0.0, 0.0, 0.0] # initial position of Cobotta in Gazebo.
 
         self.subscribers = []
 
         # there is a ROS2 bridge from model/.../0/cmd_pos to joint1R
         for i, joint_name in enumerate(self.joint_names):
+            self.subscribers.append(self.create_subscription(
+                Float64,
+                joint_name,
+                lambda msg, i=i: self.update_position(msg, i),
+                10))
+
+        # we use that so we can get the last position send by Cobotta, so we can correctly update our self.positions variable
+        for i, joint_name in enumerate(self.joint_names_write):
             self.subscribers.append(self.create_subscription(
                 Float64,
                 joint_name,
